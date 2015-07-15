@@ -3,9 +3,9 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m130524_201442_init extends Migration
+class m150715_082950_nav extends Migration
 {
-    const tlb_name = '{{%user}}';
+    const tlb_name = '{{%nav}}';
     
     public function safeUp()
     {
@@ -17,19 +17,17 @@ class m130524_201442_init extends Migration
 
         $this->createTable(self::tlb_name, [
             'id' => Schema::TYPE_PK,
-            'username' => Schema::TYPE_STRING . ' NOT NULL',
-            'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
-            'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
-            'password_reset_token' => Schema::TYPE_STRING,
-            'email' => Schema::TYPE_STRING . ' NOT NULL',
-
+            'title' => Schema::TYPE_STRING . '(32) NOT NULL',
+            'content' => Schema::TYPE_TEXT . ' NOT NULL',
+            'flag' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
+            'href' => Schema::TYPE_STRING,
+            'user' => Schema::TYPE_STRING . '(20) NOT NULL',
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
+            'sort' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 0 ',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
         
-        $this->createIndex('username', self::tlb_name, ['username'], true);
-        $this->createIndex('email', self::tlb_name, ['email'], true);
     }
 
     public function safeDown()

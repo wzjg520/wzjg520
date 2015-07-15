@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'frontend',
+    'id' => 'app_frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', ],	//log引入保证一直被加载,components是直到使用才会被加载
     'controllerNamespace' => 'frontend\controllers',

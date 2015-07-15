@@ -22,11 +22,16 @@ class AuthController extends Controller
 		$view = yii::$app->view;
 		
 		$navs = $this->getNavs();
-		
-		foreach($navs as $k => $v){
-			$view->params['nav'][$k]['label'] = $v->title;
-			$view->params['nav'][$k]['url'] = $v->href;
+		if($navs){
+		    foreach($navs as $k => $v){
+		        $view->params['nav'][$k]['label'] = $v->title;
+		        $view->params['nav'][$k]['url'] = $v->href;
+		    }
+		}else{
+		    $view->params['nav'][0]['url'] = '/site/index';
+		    $view->params['nav'][0]['label'] = 'default';
 		}
+		
 	}
 	
 	
