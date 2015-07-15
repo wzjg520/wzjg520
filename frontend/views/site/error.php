@@ -14,14 +14,14 @@ $this->title = $name;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <?= nl2br(Html::encode($message).'('.yii::$app->request->absoluteUrl.')') ?>
     </div>
 
     <p>
-        The above error occurred while the Web server was processing your request.
+        您请求的页面不存在
     </p>
     <p>
-        Please contact us if you think this is a server error. Thank you.
+       实在抱歉
     </p>
 
 </div>

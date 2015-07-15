@@ -185,4 +185,34 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+    
+	public static function getDb()
+	{
+		return yii::$app->db_ihuahua;
+	}
+	
+// 	public function isLogin() {
+// 	    if(!isset($_COOKIE[ConfMacro::LOGIN_COOKIE])){
+// 	        return false;
+// 	    }
+// 	    if($_COOKIE[ConfMacro::LOGIN_COOKIE] !== $_SESSION[ConfMacro::LOGIN_SESSION]){
+// 	        return false;
+// 	    }
+// 	}
+	
+// 	public function login($username, $password) {
+	    
+// 	    if($username =='' || $password == '') {
+// 	        return false;
+// 	    }
+	    
+// 	    $password = sha1($password . self::USER_SOFT);
+	    
+// 	    $result = self::findOne(['username' => $username,
+// 	                    'status' => self::STATUS_ACTIVE,
+// 	                    'password' => $password]);
+	    
+// 	    return $result;
+	    
+// 	}
 }

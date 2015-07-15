@@ -1,51 +1,99 @@
 <?php
+use frontend\widgets\test;
+use frontend\assets\AppAsset;
+
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = 'ihuahua';
+
+AppAsset::registerStaticJs($this, '@web/js/index.js');
+AppAsset::registerStaticCss($this, '@web/css/index.css');
+
 ?>
-<div class="site-index">
+<div>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <div id="myCarousel" class="carousel slide">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="/uploads/banner1.jpg" alt="First slide">
+         <div class="carousel-caption">标题 1</div>
+      </div>
+      <div class="item">
+         <img src="/uploads/banner2.jpg" alt="Second slide">
+         <div class="carousel-caption">标题 2</div>
+      </div>
+      <div class="item">
+         <img src="/uploads/banner3.jpg" alt="Third slide">
+         <div class="carousel-caption">标题 3</div>
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" 
+      data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next">&rsaquo;</a>
+</div> 
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
 
     <div class="body-content">
-
+        <p></p>
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            <?php for($i=0;$i<6;$i++){?>
+            <div class="col-sm-3">  
+                <div class="thumbnail">
+                  <img src="/uploads/1.jpg" alt="...">
+                  <div class="caption">
+                    <h3>商城项目</h3>
+                    <p>这个项目使很好的呀</p>
+                  </div>
+                </div>              
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            <?php }?>
+            <?php for($i=0;$i<6;$i++){?>
+            <div class="col-sm-3">  
+                <div class="thumbnail">
+                  <img src="/uploads/1.jpg" alt="...">
+                  <div class="caption">
+                    <h3>商城项目</h3>
+                    <p>这个项目使很好的呀这个项目使很好的呀这个项目使很好的呀这个项目使很好的呀这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    这个项目使很好的呀
+                    </p>
+                  </div>
+                </div>              
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
+            <?php }?>
+        </div>       
     </div>
 </div>
+<style>
+#slide,#test{
+	width:200px;
+}
+#slide{
+	background:#ccc;
+}
+#test{
+	border:1px solid #666;
+}
+</style>
+<div id="slide">测试专用</div>
+<div id="test" style="display: none;">
+    <p>测试</p>
+    <p>测试</p>
+    <p>测试</p>
+    <p>测试</p>
+</div>
+
+<?=test::widget(); ?>

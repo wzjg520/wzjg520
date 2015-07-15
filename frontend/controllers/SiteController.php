@@ -7,16 +7,17 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\controllers\AuthController;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AuthController
 {
     /**
      * @inheritdoc
@@ -70,21 +71,21 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionLogin()
-    {
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+//     public function actionLogin()
+//     {
+//         if (!\Yii::$app->user->isGuest) {
+//             return $this->goHome();
+//         }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-    }
+//         $model = new LoginForm();
+//         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+//             return $this->goBack();
+//         } else {
+//             return $this->render('login', [
+//                 'model' => $model,
+//             ]);
+//         }
+//     }
 
     public function actionLogout()
     {
