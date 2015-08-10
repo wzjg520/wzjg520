@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace common\macro;
 
 
 class ConfCode

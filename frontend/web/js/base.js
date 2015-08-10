@@ -5,7 +5,7 @@
 
 $.extend({
 	'appAjax' : function($obj){
-		$.ajax({
+		return $.ajax({
 			url : $obj['url'],
 			data : $obj['data'],
 			type : $obj['type'] || 'post',

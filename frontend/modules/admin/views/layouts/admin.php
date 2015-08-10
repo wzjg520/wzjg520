@@ -20,17 +20,17 @@ AdminAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <div class="wrap">
-        <?= $content ?>
-        </div>
-    </div>
-
+    <?= $content ?>
+    
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; Wzjg520 <?= date('Y') ?></p>
+        <p class="pull-right">版权所有，可以翻版</p>
         </div>
     </footer>
+    
+    
+    
 
     <?php $this->endBody() ?>
 </body>

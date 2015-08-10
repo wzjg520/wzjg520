@@ -26,8 +26,7 @@ return [
             'rules' => [
                  'posts' => 'site/index',
                  '' => 'site/index',
-                 'admin' => 'admin/index/index',
-                 
+                 'admin' => 'admin/index/login',                
                  // id 是命名参数，post/100 形式的URL，其实是 post/view&id=100
                  'post/<id:\d+>' => 'post/view',
                  

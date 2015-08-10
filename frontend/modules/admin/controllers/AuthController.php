@@ -11,15 +11,6 @@ class AuthController extends Controller
 	{
 		parent::__construct($id, $module);
 		
-
-		$view = yii::$app->view;
-		
-		$navs = $this->getNavs();
-		
-		foreach($navs as $k => $v){
-			$view->params['nav'][$k]['label'] = $v->title;
-			$view->params['nav'][$k]['url'] = $v->href;
-		}
 		
 	}
 	

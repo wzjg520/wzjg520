@@ -3,7 +3,7 @@ use frontend\widgets\test;
 use frontend\assets\AppAsset;
 
 /* @var $this yii\web\View */
-$this->title = 'ihuahua';
+$this->title = 'wzjg520';
 
 AppAsset::registerStaticJs($this, '@web/js/index.js');
 AppAsset::registerStaticCss($this, '@web/css/index.css');
