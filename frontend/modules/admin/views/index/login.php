@@ -1,12 +1,12 @@
 <?php
 use frontend\assets\AdminAsset;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 $this->title = 'wzjg520后台';
 
 AdminAsset::registerStaticJs($this, '@web/js/admin/login.js');
 AdminAsset::registerStaticCss($this, '@web/css/index.css');
-
 ?>
 
 
@@ -20,7 +20,7 @@ AdminAsset::registerStaticCss($this, '@web/css/index.css');
         <h4 class="modal-title">登录</h4>
       </div>
       <div class="modal-body">
-	        <form class="form-signin">
+	        <form class="form-signin" id="login-form" action="<?=Url::toRoute('user/login'); ?>"  method="post">
 		        <div class="form-group">
 					  <label class="control-label" for="username">用户名:</label>
 					  <input type="text" class="form-control" placeholder="用户名" name="username" id="username">
@@ -31,7 +31,7 @@ AdminAsset::registerStaticCss($this, '@web/css/index.css');
 				</div>				
 				 <div class="checkbox">
 				    <label>
-				      <input type="checkbox">记住我
+				      <input type="checkbox" name="remeber">记住我
 				    </label>
 				 </div>
 				 <button type="submit" class="btn btn-primary btn-block">提交</button>

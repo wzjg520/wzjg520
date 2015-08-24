@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', ],	//log引入保证一直被加载,components是直到使用才会被加载
     'controllerNamespace' => 'frontend\controllers',
-    'defaultRoute' => 'main/index',
+    'defaultRoute' => 'site/index',
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -24,9 +24,7 @@ return [
 //             'enableStrictParsing' => true,
 //            'suffix' => '.html',
             'rules' => [
-                 'posts' => 'site/index',
-                 '' => 'site/index',
-                 'admin' => 'admin/index/login',                
+                 'posts' => 'site/index',             
                  // id 是命名参数，post/100 形式的URL，其实是 post/view&id=100
                  'post/<id:\d+>' => 'post/view',
                  

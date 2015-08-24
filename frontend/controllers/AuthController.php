@@ -3,7 +3,7 @@ namespace frontend\controllers;
 use yii\web\Controller;
 use yii;
 use common\models\Nav;
-use common\models\ConfMacro;
+use common\macro\ConfMacro;
 
 class AuthController extends Controller
 {
@@ -84,6 +84,16 @@ class AuthController extends Controller
 	
 	public function isPost() {
 	    return yii::$app->request->isPost;
+	}
+	
+	public function post($name = null, $defaultValue = null)
+	{
+		return Yii::$app->request->post($name, $defaultValue);
+	}
+	
+	public function get($name = null, $defaultValue = null)
+	{
+		return Yii::$app->request->get($name, $defaultValue);
 	}
 	
 }

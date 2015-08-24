@@ -1,5 +1,5 @@
 <?php
-namespace frontend\controllers;
+namespace frontend\modules\admin\controllers;
 
 use frontend\controllers\AuthController;
 use yii;
@@ -7,9 +7,9 @@ use common\macro\ConfCode;
 
 class UserController extends AuthController
 {
-    public function actionLogin() {
-        
-        if(!$this->isAjax()){
+    public function actionLogin()
+    {
+        if(!$this->isAjax()) {
             echo $this->ajaxReturnErro(ConfCode::ACCESS_ERROR);
         }
               

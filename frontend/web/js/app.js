@@ -13,3 +13,17 @@ app.tool.scrollTop = function (){
 		'scrollTop' : '0px'
 	});
 };
+
+/**
+ * 有序列化后的数据生成post数据
+ * @param objArr
+ * @return post data
+ */
+app.tool.getPostData = function (selector) {
+	var objArr = $(selector).serializeArray();
+	var postData = {};
+	$.each(objArr, function(i, field) {
+		postData[field.name] = field.value
+	})
+	return postData;
+}
