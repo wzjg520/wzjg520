@@ -1,5 +1,6 @@
 <?php
 namespace frontend\controllers;
+
 use yii\web\Controller;
 use yii;
 use common\models\Nav;
@@ -7,13 +8,12 @@ use common\macro\ConfMacro;
 
 class AuthController extends Controller
 {
-	
-    private  $ajaxData = array(
+
+    private $ajaxData = array(
         'type' => '',
         'msg' => '',
         'code' => ''
     );
-    
 	public function __construct($id, $module)
 	{
 		parent::__construct($id, $module);
@@ -96,4 +96,5 @@ class AuthController extends Controller
 		return Yii::$app->request->get($name, $defaultValue);
 	}
 	
+
 }

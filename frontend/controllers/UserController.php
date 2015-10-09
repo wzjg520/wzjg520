@@ -7,22 +7,23 @@ use common\macro\ConfCode;
 
 class UserController extends AuthController
 {
-    public function actionLogin() {
-        
-        if(!$this->isAjax()){
+    public function actionLogin()
+    {
+
+        if (!$this->isAjax()) {
             echo $this->ajaxReturnErro(ConfCode::ACCESS_ERROR);
         }
-              
+
         if (!Yii::$app->user->isGuest) {
             echo $this->ajaxReturnErro(ConfCode::ACCESS_ERROR);
         }
-        $model = new \common\models\LoginForm();     
-        
+        $model = new \common\models\LoginForm();
+
         if ($model->load(Yii::$app->request->post(), '') && $model->login()) {
             $this->ajaxReturnSucc(ConfCode::LOGIN_SUCC);
         } else {
             $this->ajaxReturnErro(ConfCode::LOGIN_ERROR);
         }
-        
+
     }
 }
