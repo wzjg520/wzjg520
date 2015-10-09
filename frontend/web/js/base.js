@@ -1,7 +1,7 @@
 /**
  * @author Jiajun Wang
  */
-
+;
 
 $.extend({
 	'appAjax' : function($obj){
@@ -17,7 +17,7 @@ $.extend({
 	}
 });
 
-;$(function(){
+$(function(){
 	//点击弹出登录窗口
 	$('#login').click(function(e){
 		e.preventDefault();		
